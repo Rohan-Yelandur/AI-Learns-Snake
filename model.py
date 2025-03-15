@@ -16,13 +16,10 @@ class Linear_QNet(nn.Module):
         x = self.linear2(x)
         return x
 
-    def save(self, file_name=None):
+    def save(self, file_name='model.pth'):
         model_folder_path = './models'
         if not os.path.exists(model_folder_path):
             os.makedirs(model_folder_path)
-
-        if file_name is None:
-            file_name = f"model_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pth"
         file_name = os.path.join(model_folder_path, file_name)
         torch.save(self.state_dict(), file_name)
 
