@@ -79,14 +79,12 @@ class Agent:
 
         states, actions, rewards, next_states, dones = zip(*mini_sample)
         self.trainer.train_step(states, actions, rewards, next_states, dones)
-        #for state, action, reward, nexrt_state, done in mini_sample:
-        #    self.trainer.train_step(state, action, reward, next_state, done)
 
     def train_short_memory(self, state, action, reward, next_state, done):
         self.trainer.train_step(state, action, reward, next_state, done)
 
     def get_action(self, state):
-        # random moves: tradeoff exploration / exploitation
+        # random moves (tradeoff exploration / exploitation)
         self.epsilon = 80 - self.n_games
         final_move = [0,0,0]
         if random.randint(0, 200) < self.epsilon:
@@ -106,7 +104,7 @@ def train(load_model=False, model_file_name=None):
     
     plot_scores = []
     plot_mean_scores = []
-    plot_record_scores = []  # NEW: Will store the record for each game
+    plot_record_scores = []
     
     total_score = 0
     record = 0
@@ -133,14 +131,13 @@ def train(load_model=False, model_file_name=None):
 
             print(f"Game {agent.n_games}, Score: {score}, Record: {record}")
 
-            # Collect scores for plotting
             plot_scores.append(score)
             total_score += score
             mean_score = total_score / agent.n_games
             plot_mean_scores.append(mean_score)
-            plot_record_scores.append(record)  # NEW: Track the record per game
+            plot_record_scores.append(record)
 
-            # Plot all three series
+            # Plot data about agent being trained
             plot(plot_scores, plot_mean_scores, plot_record_scores)
 
 

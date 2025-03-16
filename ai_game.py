@@ -95,6 +95,7 @@ class SnakeGameAI:
     def is_collision(self, pt=None):
         if pt is None:
             pt = self.head
+            
         # Hit boundary
         if pt.x > self.w - BLOCK_SIZE or pt.x < 0 or pt.y > self.h - BLOCK_SIZE or pt.y < 0:
             return True
@@ -124,7 +125,7 @@ class SnakeGameAI:
 
         # [straight, right, left]
         if np.array_equal(action, [1, 0, 0]):
-            new_dir = clock_wise[idx] # no change
+            new_dir = clock_wise[idx] # keep going straight
         elif np.array_equal(action, [0, 1, 0]):
             new_dir = clock_wise[(idx + 1) % 4] # right turn
         elif np.array_equal(action, [0, 0, 1]):

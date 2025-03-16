@@ -27,7 +27,7 @@ class Linear_QNet(nn.Module):
         model_folder_path = './models'
         path = os.path.join(model_folder_path, file_name)
         self.load_state_dict(torch.load(path))
-        self.eval()  # Put model into evaluation mode if you want to run it for inference
+        self.eval()
 
 
 class QTrainer:
@@ -43,7 +43,6 @@ class QTrainer:
         next_state = torch.tensor(next_state, dtype=torch.float)
         action = torch.tensor(action, dtype=torch.long)
         reward = torch.tensor(reward, dtype=torch.float)
-        # (n, x)
 
         if len(state.shape) == 1:
             state = torch.unsqueeze(state, 0)
@@ -67,5 +66,3 @@ class QTrainer:
         loss.backward()
 
         self.optimizer.step()
-
-

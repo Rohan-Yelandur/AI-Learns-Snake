@@ -76,5 +76,6 @@ def run_model(model_file='model.pth'):
             print(f"Score: {score}, Record: {record}")
 
 if __name__ == '__main__':
-    # Replace 'my_saved_model.pth' with the exact file name you want to load
+    # Replace with the model you want to run
+    # Don't include 'models' folder in path
     run_model('model_20250315_184321.pth')
