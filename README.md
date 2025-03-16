@@ -10,7 +10,7 @@ pip install -r requirements.txt
 ```
 
 ## How to Use
-To train and save a new model run:
+To train and save a new model:
 
 In 'ai_game.py' change the SPEED variable to adjust training speed.
 ```bash
