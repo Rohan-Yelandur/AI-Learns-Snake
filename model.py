@@ -31,11 +31,11 @@ class Linear_QNet(nn.Module):
 
 
 class QTrainer:
-    def __init__(self, model, lr, gamma):
-        self.lr = lr
+    def __init__(self, model, LEARNING_RATE, gamma):
+        self.LEARNING_RATE = LEARNING_RATE
         self.gamma = gamma
         self.model = model
-        self.optimizer = optim.Adam(model.parameters(), lr=self.lr)
+        self.optimizer = optim.Adam(model.parameters(), lr=self.LEARNING_RATE)
         self.criterion = nn.MSELoss()
 
     def train_step(self, state, action, reward, next_state, done):

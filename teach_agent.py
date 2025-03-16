@@ -9,7 +9,7 @@ from datetime import datetime
 
 MAX_MEMORY = 100_000
 BATCH_SIZE = 1000
-LR = 0.001
+LEARNING_RATE = 0.001
 
 class Agent:
 
@@ -19,7 +19,7 @@ class Agent:
         self.gamma = 0.9 # discount rate
         self.memory = deque(maxlen=MAX_MEMORY) # popleft()
         self.model = Linear_QNet(11, 256, 3)
-        self.trainer = QTrainer(self.model, lr=LR, gamma=self.gamma)
+        self.trainer = QTrainer(self.model, lr=LEARNING_RATE, gamma=self.gamma)
 
 
     def get_state(self, game):

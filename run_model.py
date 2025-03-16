@@ -3,6 +3,10 @@ import numpy as np
 from ai_game import SnakeGameAI, Direction, Point
 from model import Linear_QNet
 
+# Replace with the model you want to run
+# Don't include 'models' folder in path
+MODEL_NAME = 'my_amazing_model.pth'
+
 def get_state(game):
     head = game.snake[0]
     point_l = Point(head.x - 20, head.y)
@@ -76,6 +80,4 @@ def run_model(model_file='model.pth'):
             print(f"Score: {score}, Record: {record}")
 
 if __name__ == '__main__':
-    # Replace with the model you want to run
-    # Don't include 'models' folder in path
-    run_model('model_20250315_184321.pth')
+    run_model(MODEL_NAME)
