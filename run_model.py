@@ -77,4 +77,4 @@ def run_model(model_file='model.pth'):
 
 if __name__ == '__main__':
     # Replace 'my_saved_model.pth' with the exact file name you want to load
-    run_model('great_model.pth')
+    run_model('model_20250315_184321.pth')
