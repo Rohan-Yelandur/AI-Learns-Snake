@@ -19,7 +19,7 @@ class Agent:
         self.gamma = 0.9 # discount rate
         self.memory = deque(maxlen=MAX_MEMORY) # popleft()
         self.model = Linear_QNet(11, 256, 3)
-        self.trainer = QTrainer(self.model, lr=LEARNING_RATE, gamma=self.gamma)
+        self.trainer = QTrainer(self.model, LEARNING_RATE=LEARNING_RATE, gamma=self.gamma)
 
 
     def get_state(self, game):
