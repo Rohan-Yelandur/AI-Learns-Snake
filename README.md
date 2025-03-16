@@ -12,7 +12,7 @@ pip install -r requirements.txt
 ## How to Use
 To train and save a new model:
 
-In 'ai_game.py' change the SPEED variable to adjust training speed.
+In 'teach_agent.py' change the SPEED variable to adjust training speed.
 ```bash
 python teach_agent.py
 ```
@@ -20,6 +20,7 @@ python teach_agent.py
 To test a previously trained model:
 
 Change the MODEL_NAME variable in 'run_model.py' to change which saved model you run.
+In 'run_model.py' change the SPEED variable to adjust training speed.
 ```bash
 python run_model.py
 ```

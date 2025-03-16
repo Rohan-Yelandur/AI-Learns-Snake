@@ -5,7 +5,8 @@ from model import Linear_QNet
 
 # Replace with the model you want to run
 # Don't include 'models' folder in path
-MODEL_NAME = 'my_amazing_model.pth'
+MODEL_NAME = 'model_20250316_145954.pth'
+SPEED = 20
 
 def get_state(game):
     head = game.snake[0]
@@ -65,7 +66,7 @@ def run_model(model_file='model.pth'):
     """Load the saved model and run the game loop without training or plotting."""
     model = Linear_QNet(11, 256, 3)
     model.load(model_file)         # Adjust this if your load method requires a path
-    game = SnakeGameAI()
+    game = SnakeGameAI(speed=SPEED)
 
     record = 0
     while True:

@@ -7,6 +7,8 @@ from model import Linear_QNet, QTrainer
 from plotter import plot
 from datetime import datetime
 
+SPEED = 1000
+
 MAX_MEMORY = 100_000
 BATCH_SIZE = 1000
 LEARNING_RATE = 0.001
@@ -109,7 +111,7 @@ def train(load_model=False, model_file_name=None):
     total_score = 0
     record = 0
     agent = Agent()
-    game = SnakeGameAI()
+    game = SnakeGameAI(speed=SPEED)
 
     while True:
         state_old = agent.get_state(game)
