@@ -5,7 +5,7 @@ from model import Linear_QNet
 
 # Replace with the model you want to run
 # Don't include 'models' folder in path
-MODEL_NAME = 'model_20250316_145954.pth'
+MODEL_NAME = 'my_amazing_model.pth'
 SPEED = 20
 
 def get_state(game):
